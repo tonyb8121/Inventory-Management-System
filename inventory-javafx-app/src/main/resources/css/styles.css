@@ -1,0 +1,526 @@
+/* General Body and Scene Styling */
+.root {
+    -fx-font-family: "Arial", sans-serif;
+    -fx-background-color: #f0f2f5; /* Light gray background */
+    -fx-font-size: 14px;
+}
+
+/* --- Global Button Styles --- */
+.button {
+    -fx-font-size: 14px;
+    -fx-padding: 8px 18px;
+    -fx-background-radius: 8px; /* Rounded corners for all buttons */
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0.5, 0, 1);
+}
+
+.button:hover {
+    -fx-opacity: 0.9;
+}
+
+.button:pressed {
+    -fx-translate-y: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 2, 0.2, 0, 0.5);
+}
+
+.primary-button {
+    -fx-background-color: linear-gradient(to bottom, #4CAF50, #45a049); /* Green gradient */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.secondary-button {
+    -fx-background-color: linear-gradient(to bottom, #607D8B, #546E7A); /* Blue-gray gradient */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.danger-button {
+    -fx-background-color: linear-gradient(to bottom, #f44336, #d32f2f); /* Red gradient */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* --- Input Field Styles --- */
+.text-field, .password-field, .combo-box .text-field, .choice-box, .text-area {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-padding: 8px 10px;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5px;
+}
+
+.text-field:focused, .password-field:focused, .combo-box .text-field:focused, .choice-box:focused, .text-area:focused {
+    -fx-border-color: #4CAF50; /* Highlight focused input fields */
+    -fx-effect: dropshadow(gaussian, rgba(76, 175, 80, 0.3), 3, 0.5, 0, 0);
+}
+
+/* --- Label/Text Styles --- */
+.label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+}
+
+.status-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #555555;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
+/* Error status text */
+.status-text.error, .negative-value {
+    -fx-text-fill: #d32f2f;
+    -fx-font-weight: bold;
+}
+
+.form-header, .section-header {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-fill: #333333;
+    -fx-padding-bottom: 10px;
+}
+
+/* --- TableView Styles --- */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 5, 0.5, 0, 1);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #4CAF50; /* Green header */
+    -fx-background-radius: 5px 5px 0 0; /* Rounded top corners */
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 35px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-cell {
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 13px;
+    -fx-padding: 5px 10px;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-insets: 0;
+    -fx-background-color: -fx-table-cell-border-color, -fx-background ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f9f9f9; /* Light stripe for readability */
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #C8E6C9; /* Light green on selection */
+    -fx-table-cell-border-color: derive(#C8E6C9, -10%);
+}
+
+.table-view .scroll-bar:horizontal .increment-button,
+.table-view .scroll-bar:horizontal .decrement-button,
+.table-view .scroll-bar:vertical .increment-button,
+.table-view .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+}
+
+/* --- Form Layout Styles --- */
+.form-container {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0.5, 0, 4);
+    -fx-padding: 30px;
+}
+
+.form-grid {
+    -fx-padding: 10px 0;
+}
+
+/* --- TabPane Styling --- */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #e0e0e0;
+}
+
+.tab-pane .tab {
+    -fx-background-insets: 0;
+    -fx-background-radius: 5px 5px 0 0;
+    -fx-padding: 8px 20px;
+    -fx-background-color: #f5f5f5;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: transparent;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: white;
+    -fx-border-color: #4CAF50; /* Green highlight for selected tab */
+    -fx-border-width: 0 0 2px 0;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #555555;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #333333;
+}
+
+.tab-pane .tab-content-area {
+    -fx-background-color: white;
+    -fx-background-radius: 0 0 10px 10px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 8, 0.5, 0, 2);
+}
+
+/* --- Dashboard Specific Styles --- */
+.dashboard-view-container {
+    -fx-background-color: #f8f8f8;
+}
+
+.dashboard-section {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 8, 0.5, 0, 2);
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+}
+
+.dashboard-subsection {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 5, 0.5, 0, 1);
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+}
+
+.stat-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #666666;
+    -fx-font-weight: normal;
+}
+
+.stat-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4CAF50; /* Green for key values */
+}
+
+.low-stock-table .table-row-cell:not(:empty) {
+    -fx-background-color: #FFEBEE; /* Light red for low stock rows */
+}
+.low-stock-table .table-row-cell:not(:empty) .label {
+    -fx-text-fill: #D32F2F; /* Darker red for text */
+}
+
+/* --- Login View Specific Styles --- */
+.login-container {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 15, 0.6, 0, 6);
+    -fx-alignment: CENTER;
+    -fx-padding: 50px;
+}
+
+.login-header {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-fill: #333333;
+    -fx-padding-bottom: 20px;
+}
+
+/* --- New POS Specific Styles --- */
+.pos-left-pane {
+    -fx-background-color: #e8f5e9; /* Lighter green background for product selection */
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 5, 0.5, 0, 1);
+    -fx-spacing: 15px;
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #d0e0d0;
+    -fx-border-width: 1px;
+    -fx-margin: 10px; /* Add margin to separate from edges */
+}
+
+.pos-right-pane {
+    -fx-background-color: #ffffff; /* White background for cart */
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0.5, 0, 2);
+    -fx-spacing: 15px;
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+    -fx-margin: 10px; /* Add margin to separate from edges */
+}
+
+.pos-header {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-fill: #4CAF50; /* Green header */
+    -fx-padding-bottom: 10px;
+}
+
+.search-box {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5px;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-padding: 5px;
+}
+
+.product-selection-area {
+    -fx-background-color: #f0f8f0; /* Very light green */
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
+    -fx-border-color: #d0e0d0;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+}
+
+.pos-action-button {
+    -fx-background-color: linear-gradient(to bottom, #4CAF50, #388E3C);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 25px;
+}
+
+.cart-table {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+}
+.cart-table .column-header-background {
+    -fx-background-color: #607D8B; /* Blue-gray for cart header */
+}
+.cart-table .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.grand-total-box {
+    -fx-background-color: #bbdefb; /* Light blue background for total */
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 15px;
+    -fx-border-color: #90caf9;
+    -fx-border-width: 1px;
+}
+
+.grand-total-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #212121;
+}
+
+.grand-total-value {
+    -fx-font-size: 22px;
+    -fx-font-weight: bolder;
+    -fx-text-fill: #0d47a1; /* Dark blue for value */
+}
+
+.quantity-button {
+    -fx-background-color: #90CAF9; /* Light blue */
+    -fx-text-fill: #1A237E; /* Dark blue text */
+    -fx-font-size: 12px;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 5px;
+}
+.quantity-button:hover {
+    -fx-background-color: #64B5F6;
+}
+
+/* Styling for ImageView in FXML */
+.image-view {
+    -fx-fit-width: 100px;
+    -fx-fit-height: 100px;
+    -fx-preserve-ratio: true;
+}
+
+/* Sales History table specific styles */
+.sales-table .column-header-background {
+    -fx-background-color: #8BC34A; /* Light green for sales table header */
+}
+.sales-table .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Payment Method Dialog specific styles */
+.negative-value {
+    -fx-text-fill: #D32F2F; /* Red color for negative values like change */
+    -fx-font-weight: bold;
+}
+
+/* Receipt View specific styles */
+.receipt-container {
+    -fx-font-family: "Courier New", monospace; /* Monospaced font for receipt feel */
+    -fx-font-size: 12px;
+    -fx-text-fill: #333333;
+}
+
+.receipt-shop-name {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+    -fx-alignment: CENTER;
+    -fx-padding-bottom: 5px;
+}
+
+.receipt-info {
+    -fx-font-size: 10px;
+    -fx-text-fill: #555555;
+    -fx-alignment: CENTER;
+}
+
+.receipt-separator {
+    -fx-background-color: #aaaaaa;
+    -fx-pref-height: 1px;
+    -fx-min-height: 1px;
+    -fx-max-height: 1px;
+    -fx-padding: 5px 0;
+}
+
+.receipt-detail-label {
+    -fx-font-weight: bold;
+    -fx-pref-width: 100px; /* Align labels */
+}
+
+.receipt-detail-value {
+    -fx-text-fill: #333333;
+}
+
+.receipt-table-header {
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-color: #cccccc;
+    -fx-padding-bottom: 3px;
+}
+
+.receipt-summary-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-pref-width: 150px; /* Align summary labels */
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.receipt-summary-value {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+    -fx-pref-width: 100px; /* Align summary values */
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.receipt-grand-total-row {
+    -fx-background-color: #e0e0e0;
+    -fx-padding: 5px;
+    -fx-background-radius: 5px;
+}
+
+.receipt-grand-total-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+    -fx-pref-width: 150px; /* Align */
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.receipt-grand-total-value {
+    -fx-font-size: 16px;
+    -fx-font-weight: bolder;
+    -fx-text-fill: #000000;
+    -fx-pref-width: 100px; /* Align */
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.receipt-section-header {
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER;
+    -fx-padding-top: 5px;
+}
+
+.receipt-footer-message {
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-font-size: 13px;
+    -fx-padding-top: 5px;
+}
+
+.receipt-fine-print {
+    -fx-font-size: 9px;
+    -fx-alignment: CENTER;
+    -fx-text-fill: #666666;
+}
+
+/* Stock Adjustment specific styles */
+.stock-adjustment-view-container {
+    -fx-background-color: #f0f2f5;
+}
+
+/* Styles for the stock adjustment icon if needed */
+.stock-adjustment-icon {
+    /* define styles for your icon if it's a specific shape/color */
+}
+
+/* Styles for the Stock Adjustment History Table */
+.adjustment-history-table {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 5, 0.5, 0, 1);
+}
+
+.adjustment-history-table .column-header-background {
+    -fx-background-color: #607D8B; /* Blue-gray header for history table */
+    -fx-background-radius: 5px 5px 0 0;
+}
+
+.adjustment-history-table .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* NEW: Styles for User Management Table and Form */
+.user-table {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 5, 0.5, 0, 1);
+}
+
+.user-table .column-header-background {
+    -fx-background-color: #FFC107; /* Amber header for user table */
+    -fx-background-radius: 5px 5px 0 0;
+}
+
+.user-table .column-header .label {
+    -fx-text-fill: #333333; /* Darker text for amber header */
+    -fx-font-weight: bold;
+}
+
+.user-table .table-row-cell:selected {
+    -fx-background-color: #FFECB3; /* Lighter amber on selection */
+    -fx-table-cell-border-color: derive(#FFECB3, -10%);
+}

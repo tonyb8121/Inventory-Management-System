@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<VBox alignment="CENTER" spacing="20.0" styleClass="login-container" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.inventory.ui.controller.LoginController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+
+    <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
+        <image>
+            <Image url="@/icons/shop_icon.png" /> <!-- Ensure you have a shop_icon.png in src/main/resources/icons -->
+        </image>
+    </ImageView>
+    <Text styleClass="login-header" text="Mini Shop Login" />
+
+    <GridPane hgap="15.0" vgap="15.0" alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" prefWidth="200.0" />
+        </columnConstraints>
+        <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="usernameField" promptText="Enter username" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <PasswordField fx:id="passwordField" promptText="Enter password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    </GridPane>
+
+    <Button fx:id="loginButton" onAction="#handleLogin" styleClass="primary-button" text="Login" />
+    <Label fx:id="statusLabel" styleClass="status-text" text="" />
+
+</VBox>

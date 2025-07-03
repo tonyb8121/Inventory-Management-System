@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane prefHeight="600.0" prefWidth="400.0" styleClass="form-container" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.inventory.ui.controller.ReceiptController">
+    <header>
+        <HBox alignment="CENTER" spacing="10">
+            <Text styleClass="form-header" text="Sales Receipt" />
+        </HBox>
+    </header>
+    <content>
+        <VBox alignment="TOP_CENTER" spacing="5.0" styleClass="receipt-container">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+
+            <!-- Shop Info (Header) -->
+            <Label fx:id="shopNameLabel" styleClass="receipt-shop-name" text="Mini Shop" />
+            <Label fx:id="shopAddressLabel" styleClass="receipt-info" text="123 Main Street, Nairobi" />
+            <Label fx:id="shopPhoneLabel" styleClass="receipt-info" text="Tel: +254 7XX XXX XXX" />
+            <Label fx:id="shopEmailLabel" styleClass="receipt-info" text="Email: info@minishop.co.ke" />
+            <Separator styleClass="receipt-separator" />
+
+            <!-- Transaction Details -->
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Receipt No: " styleClass="receipt-detail-label" />
+                <Label fx:id="receiptNumberLabel" styleClass="receipt-detail-value" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Date: " styleClass="receipt-detail-label" />
+                <Label fx:id="transactionDateLabel" styleClass="receipt-detail-value" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Cashier: " styleClass="receipt-detail-label" />
+                <Label fx:id="cashierLabel" styleClass="receipt-detail-value" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <Separator styleClass="receipt-separator" />
+
+            <!-- Items Table -->
+            <GridPane hgap="5.0" vgap="2.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="45.0" /> <!-- Item Name -->
+                    <ColumnConstraints hgrow="NEVER" percentWidth="15.0" /> <!-- Qty -->
+                    <ColumnConstraints hgrow="NEVER" percentWidth="20.0" /> <!-- Price -->
+                    <ColumnConstraints hgrow="NEVER" percentWidth="20.0" /> <!-- Total -->
+                </columnConstraints>
+                <Label text="ITEM" styleClass="receipt-table-header" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label text="QTY" styleClass="receipt-table-header" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="PRICE" styleClass="receipt-table-header" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <Label text="TOTAL" styleClass="receipt-table-header" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            </GridPane>
+            <VBox fx:id="itemsVBox" spacing="2.0" /> <!-- Dynamically populated by controller -->
+            <Separator styleClass="receipt-separator" />
+
+            <!-- Totals -->
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                <Label text="Subtotal:" styleClass="receipt-summary-label" />
+                <Label fx:id="subtotalLabel" styleClass="receipt-summary-value" />
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                <Label text="VAT (0%):" styleClass="receipt-summary-label" /> <!-- Assuming 0% for now -->
+                <Label fx:id="vatLabel" styleClass="receipt-summary-value" text="KSh 0.00" />
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" spacing="10.0" styleClass="receipt-grand-total-row">
+                <Label text="GRAND TOTAL:" styleClass="receipt-grand-total-label" />
+                <Label fx:id="grandTotalReceiptLabel" styleClass="receipt-grand-total-value" />
+            </HBox>
+            <Separator styleClass="receipt-separator" />
+
+            <!-- Payment Details -->
+            <Label text="PAYMENT DETAILS" styleClass="receipt-section-header" />
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Method: " styleClass="receipt-detail-label" />
+                <Label fx:id="paymentMethodLabel" styleClass="receipt-detail-value" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <HBox fx:id="cashPaymentRow" alignment="CENTER_LEFT">
+                <Label text="Cash Paid: " styleClass="receipt-detail-label" />
+                <Label fx:id="cashPaidLabel" styleClass="receipt-detail-value" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <HBox fx:id="changeRow" alignment="CENTER_LEFT">
+                <Label text="Change: " styleClass="receipt-detail-label" />
+                <Label fx:id="changeReceiptLabel" styleClass="receipt-detail-value" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <HBox fx:id="mpesaPaymentRow" alignment="CENTER_LEFT">
+                <Label text="M-Pesa Paid: " styleClass="receipt-detail-label" />
+                <Label fx:id="mpesaPaidLabel" styleClass="receipt-detail-value" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <HBox fx:id="mpesaRefRow" alignment="CENTER_LEFT">
+                <Label text="M-Pesa Ref: " styleClass="receipt-detail-label" />
+                <Label fx:id="mpesaRefIdLabel" styleClass="receipt-detail-value" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <Separator styleClass="receipt-separator" />
+
+            <!-- Footer Message -->
+            <Label text="THANK YOU FOR YOUR BUSINESS!" styleClass="receipt-footer-message" />
+            <Label text="Goods once sold are not returnable. Check goods carefully." styleClass="receipt-fine-print" />
+        </VBox>
+    </content>
+    <buttonTypes>
+        <ButtonType fx:id="printButton" buttonData="OK_DONE" text="Print" />
+        <ButtonType fx:id="closeButton" buttonData="CANCEL_CLOSE" text="Close" />
+    </buttonTypes>
+</DialogPane>

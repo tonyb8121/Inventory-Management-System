@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox alignment="TOP_CENTER" spacing="15.0" styleClass="tab-content-container" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.inventory.ui.controller.SalesController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+
+    <!-- Sales History Header -->
+    <Text styleClass="form-header" text="Sales History &amp; Receipts" />
+
+    <!-- Search and Filter Bar -->
+    <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="search-filter-box">
+        <TextField fx:id="salesSearchField" onAction="#handleSalesSearch" promptText="Search sales by product name..." HBox.hgrow="ALWAYS" />
+        <Button onAction="#handleSalesSearch" styleClass="primary-button" text="Search" />
+        <Button onAction="#handleRefreshSalesButton" styleClass="secondary-button" text="Refresh All" />
+
+        <Separator orientation="VERTICAL" HBox.hgrow="NEVER" />
+
+        <!-- Date Filtering -->
+        <Label text="From:" />
+        <DatePicker fx:id="startDatePicker" promptText="Start Date" />
+        <Label text="To:" />
+        <DatePicker fx:id="endDatePicker" promptText="End Date" />
+
+        <!-- Payment Method Filter -->
+        <Label text="Method:" />
+        <ChoiceBox fx:id="paymentMethodChoiceBox" prefWidth="120.0" />
+
+        <!-- Cashier Filter -->
+        <Label text="Cashier:" />
+        <ComboBox fx:id="cashierComboBox" prefWidth="150.0" />
+
+        <Button onAction="#handleFilterSales" styleClass="primary-button" text="Apply Filters" />
+    </HBox>
+
+    <!-- Sales Table -->
+    <TableView fx:id="salesTable" VBox.vgrow="ALWAYS" styleClass="sales-table">
+        <columns>
+            <TableColumn fx:id="saleIdColumn" prefWidth="60.0" minWidth="50.0" text="Sale ID" />
+            <TableColumn fx:id="saleProductColumn" prefWidth="250.0" minWidth="180.0" text="Product" />
+            <TableColumn fx:id="saleQuantityColumn" prefWidth="80.0" minWidth="60.0" text="Qty" />
+            <TableColumn fx:id="saleUnitPriceColumn" prefWidth="120.0" minWidth="90.0" text="Unit Price" />
+            <TableColumn fx:id="saleTotalAmountColumn" prefWidth="120.0" minWidth="90.0" text="Total" />
+            <TableColumn fx:id="saleReceiptColumn" prefWidth="150.0" minWidth="100.0" text="Receipt No." />
+            <TableColumn fx:id="saleDateColumn" prefWidth="150.0" minWidth="120.0" text="Transaction Date" />
+            <TableColumn fx:id="saleActionsColumn" prefWidth="100.0" minWidth="80.0" text="Actions" />
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+        <placeholder>
+            <Label text="No sales records to display." />
+        </placeholder>
+    </TableView>
+
+    <!-- Status Label -->
+    <Label fx:id="salesStatusLabel" styleClass="status-text" wrapText="true" />
+</VBox>
