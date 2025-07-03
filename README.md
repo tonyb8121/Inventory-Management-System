@@ -118,6 +118,12 @@ This method requires a bit more setup in IntelliJ for JavaFX projects, but avoid
 
 The JavaFX application window should now appear.
 
+Login Credentials:
+
+**owner**- Password is: **password**
+
+**cashier** -Password is: **password**
+
 #### Via Terminal (Recommended for quick runs and other IDE users):
 This method uses the **JavaFX Maven Plugin**, which simplifies dependencies and module path handling.
 
